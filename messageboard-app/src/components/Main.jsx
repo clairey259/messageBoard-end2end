@@ -1,12 +1,19 @@
-import React from 'react';
-import Styles from "../App.scss";
+import React from "react";
+import Message from "./Message";
+import Styles from "../App.module.scss";
 
-const Main = () => {
+const Main = (props) => {
+  const { data } = props;
   return (
-    <div className={Styles}>
-        <h1>Welcome to the message board</h1>
+    <div className={Styles.main}>
+      <h1>Past Messages</h1>
+      <section>
+        {data.map((message) => {
+          return <Message message={message} />;
+        })}
+      </section>
     </div>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
