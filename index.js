@@ -1,27 +1,26 @@
 const express = require ('express');
-const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 
+const knex = require('knex')({
+    client: 'mysql',
+    connection: {
+      host : '127.0.0.1',
+      port : 3306,
+      user : 'user',
+      password : 'password',
+      database : 'messageboard'
+    }
+  });
+
 app.use(express.json())
 
-const posts = [
-    {
-        id: 1,
-        title: 'Post 1',
-        content: 'Content 1'
-    },
-    {
-        id: 2,
-        title: 'Post 2',
-        content: 'Content 2'
-    }
-
-]
-
 app.get('/posts', (req, res) => {
-    res.status(200)
-    res.json(posts)
+    knex.select().table('posts').then(
+      (posts) =>  {
+        res.json(posts) 
+        res.status(200)
+      })
 })
 
 app.post('/', (req, res) => {
