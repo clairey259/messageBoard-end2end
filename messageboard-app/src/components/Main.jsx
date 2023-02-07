@@ -9,7 +9,7 @@ const Main = (props) => {
       <h1>Past Messages</h1>
       <section>
         {data.map((message) => {
-          return <Message message={message} />;
+          return <Message message={message} key={message.id}/>;
         })}
       </section>
     </div>
