@@ -1,7 +1,7 @@
 $black: rgb(19, 18, 18);
 $white: rgb(255, 251, 251);
 $background-colour-primary: rgba(176, 196, 222, 0.565);
-$background-colour-tertiary: rgba(198, 198, 198, 0.506);
+$background-colour-tertiary: rgb(238, 240, 244);
 
 * {
   color: $black;
@@ -33,5 +33,4 @@ $background-colour-tertiary: rgba(198, 198, 198, 0.506);
   height: 10vh;
   width: 100vw;
   display: inline-block;
-  background-color: $background-colour-tertiary;
 }
