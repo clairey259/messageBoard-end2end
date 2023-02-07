@@ -9,9 +9,9 @@ const getData = () => {
     const url = buildURL()
     return fetch(url)
         .then((res) => res.json())
-        //.then((message) => {
-            //return message
-        //})
+        .then((message) => {
+            return message
+        })
 }
 
 export default getData
